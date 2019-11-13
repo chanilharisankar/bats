@@ -1,0 +1,12 @@
+#!/bin/bash
+
+command=`basename "$0"`
+parameters="$@"
+
+echo "Mocking ${command} ${parameters}" >&2
+if [[ $command=="kubectl" ]]; then
+    if [[ $parameters == *"apply"* ]]; then
+            echo "failing forcefully"
+            exit 1
+    fi
+fi

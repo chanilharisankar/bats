@@ -2,6 +2,7 @@
 
 setup() {
     echo "setup taskes"
+    export PATH=test/bin-stubs/:$PATH
 }
 
 teardown() {
